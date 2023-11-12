@@ -5,8 +5,7 @@ import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ReportRepository extends MongoRepository<ReportEntity, String> {
-    @Query(value = "{ '_id' : ?0 }")
-    public ReportEntity findReportByReportId(String reportId);
+public interface UserRepository extends MongoRepository<UserEntity, String>{
+    @Query(value = "{ 'userId' : ?0 }")
+    public UserEntity findUserByUserId(String userId);
 }
-
